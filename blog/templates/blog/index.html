@@ -1,0 +1,41 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}My blog{% endblock %} 
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "blog/post.css" %}">
+<link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+    <header>
+        <img src="{% static 'blog/images/1.png' %}" alt="Taushif - The Authoe Of This Blog">
+        <h2>TAUSHIF BLOG</h2>
+    </header>
+
+    <p>Hi, I am Taushif i love to blog about coding...</p>
+</section>
+
+<section id="latest-posts">
+    <h2>My Latest thought</h2>
+    <ul>
+        {% for post in posts %}
+        {% include "blog/includes/post.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>What i do???</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Velit placeat architecto, at provident nisi tempore?
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Velit placeat architecto, at provident nisi tempore?
+    </p>
+</section>
+{% endblock  %}
